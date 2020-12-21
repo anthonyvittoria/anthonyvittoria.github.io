@@ -161,4 +161,21 @@ td.matrix-body {
     .terminal {
         display: none;
     }
+    #name {
+        font-size: 35px;
+    }
+    #linkRowSmall {
+        display: auto;
+    }
+    #linkRowBig {
+        display: none;
+    }
+}
+@media (min-width: 576px) {
+    #linkRowSmall {
+        display: none;
+    }
+    #linkRowBig {
+        display: auto;
+    }
 }
