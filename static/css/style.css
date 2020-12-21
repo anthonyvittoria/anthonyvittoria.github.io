@@ -14,6 +14,9 @@ a:hover, .likeLink:hover {
 #name {
     font-size: 90px;
 }
+.container {
+    margin-top: 70px;
+}
 .vh-center {
     display: flex;
     justify-content: center;
