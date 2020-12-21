@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anthony Vittoria | Smith-Waterman</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/77d041732e.js" crossorigin="anonymous"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="shortcut icon" href="static/img/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container" style="margin-top: 50px;">
+        <p><a href="https://anthonyvittoria.com">< Back</a></p>
+        <h1 class="title" style="font-size: 70px;">Smith-Waterman Algorithm</h1>
+        <div class="p-5">
+            <h2 class="title">The Algorithm</h2>
+            <p><a target="_blank" href="https://en.wikipedia.org/wiki/Smith%E2%80%93Waterman_algorithm">The algorithm</a> performs local sequence alignment on two substrings of nucleic acids or protein
+                sequences. Local sequence alignment is frequently performed in bioinformatics to <i>"identify regions of similarity 
+                that may be a consequence of functional, structural, or evolutionary relationships between the sequences"</i> (Wikipedia).
+            </p>
+            <p>The Smith-Waterman algorithm was proposed in 1981 as an alternative to the earlier <a target="_blank" href="https://en.wikipedia.org/wiki/Needleman%E2%80%93Wunsch_algorithm">Needleman-Wunsch algorithm</a>
+                with the intention of improving the readability of the scoring matrix. 
+            </p>
+            <p>Here's a summary of how the algorithm works:</p>
+            <ol>
+                <li>Define substitution matrix and gap penalties</li>
+                <p>"Scores" are assigned to matches and mismatches between base pairs. The exact value of each score
+                    is assigned by the researcher and typically will be determined by the particular goal of their research.
+                </p>
+                <li>Initialize the scoring matrix</li>
+                <p>A matrix of size &nbsp;<code>1 + length(sequence1)</code> <span class="font-monospace">&nbsp;x&nbsp;</span> <code>1 + length(sequence2)</code>&nbsp; is created, and
+                initialized with zeroes in the first row and column.</p>
+                <li>Score pairs and fill matrix</li>
+                <p>Each pair of base matches is assigned a final score equal to the highest scoring test against other cells in the
+                    matrix (more info on this <a target="_blank" href="https://en.wikipedia.org/wiki/Smith%E2%80%93Waterman_algorithm#Explanation">here</a>).
+                </p>
+                <li>Traceback</li>
+                <p>Starting with the highest final score, the matrix is traversed recursively along the highest-scoring cells until zero is reached.
+                    This process identifies the base pairs used in the final result.
+                </p>
+            </ol>
+            <h2 class="title mt-5 mb-3">Interactive Example &nbsp;<span style="font-size: 14px;"><a target="_blank" href="https://github.com/anthonyvittoria/smith-waterman-js">See the Code <i class="fab fa-github"></i></a></span></h2>
+            <div class="row">
+                <div class="col">
+
+                    <div class="card">
+
+                        <!-- Stage 0 -->
+                        <div id="card-stage-0" class="card-body p-4">
+                            <h5 class="card-title title">1. Initialize Matrix</h5>
+                            <p>We are going to analyze the DNA sequences <code>GGTTGACTA</code> and <code>TGTTACGG</code> for similarity.</p>
+                            <p>First, we initialize the first row and column of the matrix to <code>0</code>.</p>
+                            <button class="btn btn-secondary m-next-0">Next</button>
+                        </div>
+                        
+                        <!-- Stage 1 -->
+                        <div id="card-stage-1" class="card-body d-none p-4">
+                            <h5 class="card-title title">2. Score Matrix</h5>
+                            <p>From top to bottom and left to right, at each nucleotide intersection the two bases
+                                are compared and a score is computed based on their compatibility according to the
+                                algorithm.
+                            </p>
+                            <button class="btn btn-secondary m-next-1">Next</button>
+                        </div>
+
+                        <!-- Stage 2 -->
+                        <div id="card-stage-2" class="card-body d-none p-4">
+                            <h5 class="card-title title">3. Traceback</h5>
+                            <p>Starting from the highest value, we traverse the matrix recursively to
+                                identify the greatest subsequent scores. This identifies the base pairs we
+                                will use in our final result.
+                            </p>
+                            <button class="btn btn-secondary m-next-2">Next</button>
+                        </div>
+
+                        <!-- Stage 3 -->
+                        <div id="card-stage-3" class="card-body d-none p-4">
+                            <h5 class="card-title title">4. Final Result</h5>
+                            <p>From the path of the traceback, we identify intersections of the same base
+                                which we use to determine our final result. As you can see from the highlighted 
+                                bases, our final result is:
+                            </p>
+                            <div class="text-center">
+                                <code>G T T G A C<br>| | |   | | |<br>G T T - A C</code>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-7">
+                    <table id="matrix" class="table table-borderless mx-auto text-center stage-0" style="width: 60%;font-size: 18px;"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="static/js/smith-waterman.js"></script>
+    <script>
+
+        function matrixZero() {
+          $('.matrix-body').html("");
+          $('.matrix-zero').html("0");
+        }
+
+        function matrixOne(mr1, mr2, mr3, mr4, mr5, mr6, mr7, mr8, mr9) {
+          // update matrix values
+          setTimeout(function(){ $('#matrix-row-1').html(mr1); }, 500);
+          setTimeout(function(){ $('#matrix-row-2').html(mr2); }, 1000);
+          setTimeout(function(){ $('#matrix-row-3').html(mr3); }, 1500);
+          setTimeout(function(){ $('#matrix-row-4').html(mr4); }, 2000);
+          setTimeout(function(){ $('#matrix-row-5').html(mr5); }, 2500);
+          setTimeout(function(){ $('#matrix-row-6').html(mr6); }, 3000);
+          setTimeout(function(){ $('#matrix-row-7').html(mr7); }, 3500);
+          setTimeout(function(){ $('#matrix-row-8').html(mr8); }, 4000);
+          setTimeout(function(){ $('#matrix-row-9').html(mr9); }, 4500);
+          // update card text
+          $('#card-stage-0').addClass("d-none");
+          $('#card-stage-1').removeClass("d-none");
+          // disable next button
+          $('.m-next-1').prop('disabled', true);
+          setTimeout(function(){ $('.m-next-1').prop('disabled', false); }, 4500);
+        }
+
+        function matrixTwo() {
+          // highlight matrix values
+          setTimeout(function(){ document.querySelector("#matrix-row-7 > td:nth-child(8)").style.backgroundColor = "#fff3cd"}, 500);
+          setTimeout(function(){ document.querySelector("#matrix-row-6 > td:nth-child(7)").style.backgroundColor = "#fff3cd"}, 1000);
+          setTimeout(function(){ document.querySelector("#matrix-row-5 > td:nth-child(6)").style.backgroundColor = "#fff3cd"}, 1500);
+          setTimeout(function(){ document.querySelector("#matrix-row-4 > td:nth-child(6)").style.backgroundColor = "#fff3cd"}, 2000);
+          setTimeout(function(){ document.querySelector("#matrix-row-3 > td:nth-child(5)").style.backgroundColor = "#fff3cd"}, 2500);
+          setTimeout(function(){ document.querySelector("#matrix-row-2 > td:nth-child(4)").style.backgroundColor = "#fff3cd"}, 3000);
+          $('#card-stage-1').addClass("d-none");
+          $('#card-stage-2').removeClass("d-none");
+          $('.m-next-2').prop('disabled', true);
+          setTimeout(function(){ $('.m-next-2').prop('disabled', false); }, 3500);
+        }
+        
+        function matrixThree() {
+          // highlight sequence letters
+          $("#matrix-top-6").css('border', '2px solid #e83e8c');
+          $("#matrix-top-5").css('border', '2px solid #e83e8c');
+          $("#matrix-top-4").css('border', '2px solid #e83e8c');
+          $("#matrix-top-3").css('border', '2px solid #e83e8c');
+          $("#matrix-top-2").css('border', '2px solid #e83e8c');
+          $("#matrix-left-7").css('border', '2px solid #e83e8c');
+          $("#matrix-left-6").css('border', '2px solid #e83e8c');
+          $("#matrix-left-4").css('border', '2px solid #e83e8c');
+          $("#matrix-left-3").css('border', '2px solid #e83e8c');
+          $("#matrix-left-2").css('border', '2px solid #e83e8c');
+          $('#card-stage-2').addClass('d-none');
+          $('#card-stage-3').removeClass('d-none');
+        }
+
+        function matrix() {
+          let matrix = create_matrix(rows, cols, s1, s2)[0];
+          let html = '<tr><th></th><th></th>';
+          for (let ch = 0; ch < s2.length; ch++) {
+            html += '<th id="matrix-top-' + (ch + 1) + '"><code>' + s2.charAt(ch) + '</code></th>';
+          }
+          html += '</tr>';
+          for (let i = 0; i < rows; i++) {
+            if (i > 0) html += '<tr id="matrix-row-' + i.toString() + '">' + '<th id="matrix-left-' + i + '"><code>' + s1.charAt(i - 1) + '</code></th>';
+            else html += '<tr><th></th>';
+            for (let j = 0; j < matrix[i].length; j++) {
+              if (j == 0 || i == 0) {
+                html += '<td class="matrix-body matrix-zero">' + matrix[i][j] + '</td>';
+              } else {
+                html += '<td class="matrix-body">' + matrix[i][j] + '</td>';
+              }
+            }
+            html += '</tr>';
+          }
+          $('#matrix').html(html);
+        }
+
+        $(document).ready(function () {
+          matrix();
+          var mr1 = $('#matrix-row-1').html();
+          var mr2 = $('#matrix-row-2').html();
+          var mr3 = $('#matrix-row-3').html();
+          var mr4 = $('#matrix-row-4').html();
+          var mr5 = $('#matrix-row-5').html();
+          var mr6 = $('#matrix-row-6').html();
+          var mr7 = $('#matrix-row-7').html();
+          var mr8 = $('#matrix-row-8').html();
+          var mr9 = $('#matrix-row-9').html();
+          matrixZero();
+          $('.m-next-0').click(function() {
+            matrixOne(mr1, mr2, mr3, mr4, mr5, mr6, mr7, mr8, mr9);
+          });
+          $('.m-next-1').click(function() {
+            matrixTwo();
+          });
+          $('.m-next-2').click(function() {
+            matrixThree();
+          });
+        });
+      </script>
+</body>
+</html>

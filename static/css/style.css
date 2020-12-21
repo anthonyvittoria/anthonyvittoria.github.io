@@ -3,6 +3,9 @@ body {
     overflow-x: hidden;
     padding-bottom: 80px;
 }
+li {
+    font-weight: 700;
+}
 a, .likeLink {
     cursor: pointer;
     text-decoration: underline;
@@ -13,6 +16,16 @@ a:hover, .likeLink:hover {
 }
 #name {
     font-size: 90px;
+}
+table {
+    width: 25%;
+    table-layout: fixed;
+}
+td.matrix-body {
+    font-family: monospace;
+    border: 1px solid #a1a1a1;
+    width: 35px;
+    height: 35px;
 }
 .container {
     margin-top: 70px;
