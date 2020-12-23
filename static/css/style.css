@@ -164,18 +164,47 @@ td.matrix-body {
     #name {
         font-size: 35px;
     }
-    #linkRowSmall {
+    #linkRowSmall a, #linkRowSmall .likeLink {
+        text-decoration: none;
+    }
+    #firstRowLg {
+        display: none;
+    }
+    #firstRowSm {
         display: auto;
     }
-    #linkRowBig {
+    #firstRowSm ul {
+        text-align: center;
+        margin-top: 40px;
+    }
+    #glarosImg {
+        width: 100%;
+    }
+    .container {
+        margin-top: 30px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .overlay {
         display: none;
+    }
+    .projectBtnSm button {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .projectHeader {
+        padding-left: .9em;
     }
 }
 @media (min-width: 576px) {
-    #linkRowSmall {
+    #firstRowLg {
+        display: auto;
+    }
+    #firstRowSm {
         display: none;
     }
-    #linkRowBig {
-        display: auto;
+    .projectBtnSm {
+        display: none;
     }
 }

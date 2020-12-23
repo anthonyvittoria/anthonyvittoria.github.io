@@ -33,7 +33,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="row">
+        <div id="firstRowLg" class="row">
             <div class="col">
                 <h2 style="font-family: 'Bebas Neue';">Hi, I'm</h2>
                 <h1 id="name" class="title">Anthony Vittoria</h1>
@@ -54,14 +54,6 @@
                         <a href="static/doc/Resume.pdf"><p>Resume</p></a>
                     </div>
                     <div class="col"></div>
-                </div>
-                <div id="linkRowSmall">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><a data-bs-toggle="modal" data-bs-target="#contactModal"><p class="likeLink">Contact Me</p></a></li>
-                        <li class="list-group-item"><a target="_blank" href="https://www.linkedin.com/in/anthony-vittoria-04b501163/"><p>LinkedIn</p></a></li>
-                        <li class="list-group-item"><a target="_blank" href="https://github.com/anthonyvittoria"><p>GitHub</p></a></li>
-                        <li class="list-group-item"><a href="static/doc/Resume.pdf"><p>Resume</p></a></li>
-                    </ul>
                 </div>
 
                 <div id="contactModal" class="modal fade" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
@@ -108,7 +100,42 @@
                 </div>
             </div>
         </div>
-        <div class="row" style="margin-top: 80px;">
+        
+        <div id="firstRowSm" class="row">
+            <div class="px-5 mt-4">
+                <h2 style="font-family: 'Bebas Neue';">Hi, I'm</h2>
+                    <h1 id="name" class="title">Anthony Vittoria</h1>
+                    <p>I'm a Software Engineer and Full-Stack Web Developer in Mountain View, CA.</p>
+            </div>
+                <div id="linkRowSmall">
+                    <ul class="list-group list-group-flush gap-2">
+                        <li class="list-group-item"><a data-bs-toggle="modal" data-bs-target="#contactModalSm"><p class="likeLink">Contact Me</p></a></li>
+                        <li class="list-group-item"><a target="_blank" href="https://www.linkedin.com/in/anthony-vittoria-04b501163/"><p>LinkedIn</p></a></li>
+                        <li class="list-group-item"><a target="_blank" href="https://github.com/anthonyvittoria"><p>GitHub</p></a></li>
+                        <li class="list-group-item"><a href="static/doc/Resume.pdf"><p>Resume</p></a></li>
+                    </ul>
+                </div>
+
+                <div id="contactModalSm" class="modal fade" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 id="contactModalLabel" class="modal-title">Get in touch</h5>
+                                <p class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></p>
+                            </div>
+                            <div class="modal-body text-center">
+                                <p>The best way to reach me is by email.</p>
+                                <p>Reach out at <a href="mailto:a.vittoria0304@gmail.com">a.vittoria0304@gmail.com</a></p>
+                                <hr class="mx-auto my-5 w-50">
+                                <p>Send me encrypted mail:</p>
+                                <a href="static/doc/pubkey.txt"><p>PGP Key</p></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <div id="projectRow" class="row" style="margin-top: 80px;">
             <h1 class="text-center title">Projects</h1>
             <hr class="mx-auto" style="width: 25%;">
         </div>
@@ -122,6 +149,10 @@
                     </div>
                 </div>
                 <div class="card-body">
+                    <div class="d-grid gap-2 mx-auto mb-4">
+                        <a class="projectBtnSm" target="_blank" class="projectLinkSm" href="https://handpickd.app" style="color: white; text-decoration: none;"><button class="btn btn-success">View Live</button></a>
+                        <a class="projectBtnSm" href="https://anthonyvittoria.com/handpickd"><button class="btn btn-secondary">Learn More</button></a>
+                    </div>
                     <p>Can't find the exact shade of nail polish you're looking for? HandPickd generates
                         a specially curated list of nail polishes that match any color you provide! Find the perfect color
                         by using the color picker widget or use the eyedropper tool to grab a color from any image!
@@ -131,12 +162,15 @@
 
             <div class="card mt-5 w-75 mx-auto p-0" style="border: none;">
                 <div class="card-img vh-center text-center" style="background-color: #1b2a49; color: black; border: 1px solid gray;">
-                    <img src="static/img/glaros.png" alt="">
+                    <img id="glarosImg" src="static/img/glaros.png" alt="">
                     <div class="overlay vh-center">
                         <a href="https://anthonyvittoria.com/glaros"><p class="btn btn-secondary mx-2">Learn More</p></a>
                     </div>
                 </div>
                 <div class="card-body">
+                    <div class="d-grid gap-2 mx-auto mb-4">
+                        <a class="projectBtnSm" href="https://anthonyvittoria.com/glaros"><button class="btn btn-secondary">Learn More</button></a>
+                    </div>
                     <p>For my final year project at university, I worked on a small team to create Glaros, a fully-automated
                         software package that migrates a cloud-hosted application between service providers to ensure the
                         lowest possible hosting cost.
@@ -152,6 +186,9 @@
                     </div>
                 </div>
                 <div class="card-body">
+                    <div class="d-grid gap-2 mx-auto mb-4">
+                        <a class="projectBtnSm" href="https://anthonyvittoria.com/smith-waterman"><button class="btn btn-secondary">Learn More</button></a>
+                    </div>
                     <p>The Smith-Waterman algorithm is a method of local sequence alignment, 
                         which is performed in bioinformatics to isolate regions of similarity
                         between nucleotide sequences. My implementation is written in pure JavaScript.
