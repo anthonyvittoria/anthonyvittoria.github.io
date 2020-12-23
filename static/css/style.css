@@ -157,7 +157,7 @@ td.matrix-body {
 }
 
 /* Mobile compatibility */
-@media (max-width: 576px) {
+@media (max-width: 690px) {
     .terminal {
         display: none;
     }
@@ -197,7 +197,7 @@ td.matrix-body {
         padding-left: .9em;
     }
 }
-@media (min-width: 576px) {
+@media (min-width: 700px) {
     #firstRowLg {
         display: auto;
     }
