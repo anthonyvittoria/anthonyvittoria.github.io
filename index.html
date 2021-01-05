@@ -63,12 +63,22 @@
                                 <h5 id="contactModalLabel" class="modal-title">Get in touch</h5>
                                 <p class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></p>
                             </div>
-                            <div class="modal-body text-center">
-                                <p>The best way to reach me is by email.</p>
-                                <p>Reach out at <a href="mailto:a.vittoria0304@gmail.com">a.vittoria0304@gmail.com</a></p>
-                                <hr class="mx-auto my-5 w-50">
-                                <p>Send me encrypted mail:</p>
-                                <a href="static/doc/pubkey.txt"><p>PGP Key</p></a>
+                            <div class="modal-body">
+                                <form action="https://kwes.io/api/foreign/forms/0bv5nJDKxTTIzO6IBIKt" class="kwes-form">
+                                    <div class="mb-3 px-4">
+                                        <label for="name" class="form-label">Name</label>
+                                        <input type="text" name="name" class="form-control" placeholder="" rules="required|max:100">
+                                    </div>
+                                    <div class="mb-3 px-4">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="text" name="email" class="form-control" rules="required|email">
+                                    </div>
+                                    <div class="mb-3 px-4">
+                                        <label for="message">Message</label>
+                                        <textarea name="message" class="form-control" cols="30" rows="10" rules="required|max:5000"></textarea>
+                                    </div>
+                                    <button class="btn btn-primary" type="submit">Submit</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -200,5 +210,6 @@
     <img src="static/img/meta.png" style="display: none;">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="https://kwes.io/v2/kwes-script.js" defer></script>
 </body>
 </html>
