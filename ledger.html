@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anthony Vittoria | Ledger</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/77d041732e.js" crossorigin="anonymous"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="shortcut icon" href="static/img/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container" style="margin-top: 50px;">
+        <div class="projectHeader">
+            <p><a href="https://anthonyvittoria.com">< Back</a></p>
+            <h1 class="title" style="font-size: 70px;">Ledger</h1>
+        </div>
+        <div class="p-5">
+            <h2 class="title">The Task</h2>
+            <p class="mb-5">I was tasked with solving an issue of disorganized and fragmented budget and sales records by creating a centralized
+                location for business-critical information to be stored and retrieved. My solution was to create a web application that would serve
+                as an employee portal, as this would allow all employees to access and edit records concurrently and from anywhere in the world.
+            </p>
+            <h2 class="title">The Solution &nbsp;<span style="font-size: 14px;"><a target="_blank" href="https://github.com/anthonyvittoria/ledger">See the Code <i class="fab fa-github"></i></a></span></h2>
+            <p>I created a Django web application and designed the architecture to best accommodate the requirements of my task. This meant that
+                there needed to be support for many customers that fall under different sectors and are located in many regions of the world. The
+                application used a MySQL database for data storage and was deployed on Microsoft Azure.
+            </p>
+            <p>I designed a number of different views to represent the types of reports that my employer needed to run. These reports applied various filters to
+                the collected data based on fields like year, quarter, plant location, customer region, and customer sector.
+            </p>
+            <figure class="figure mb-5">
+                <img src="static/img/ledger-budget.png" alt="HandPickd Color Picker GIF" class="mx-auto mt-5 figure-image" style="display: block; width: 75%">
+                <figcaption class="figure-caption text-center">A budget report by Region by Sector, showing all budget records for customers<br> in Europe grouped by their sector. All data is randomly generated.</figcaption>
+            </figure>
+            <p>Each generated report allowed users to export the results in various formats, including copying all cell values to clipboard, generating an
+                Excel spreadsheet, and printing the result table. Each report also included a search bar so that specific rows can be easily found from 
+                large result tables.
+            </p>
+            <figure class="figure">
+                <img src="static/img/ledger-vs.png" alt="HandPickd Color Picker GIF" class="mx-auto mt-5 figure-image" style="display: block; width: 75%">
+                <figcaption class="figure-caption text-center">A global report by Sector, showing sales vs budgets to display loss and profit.<br>All data is randomly generated.</figcaption>
+            </figure>
+        </div>
+    </div>
+    
+</body>
+</html>
