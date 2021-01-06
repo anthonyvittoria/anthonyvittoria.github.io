@@ -54,10 +54,7 @@ td.matrix-body {
     transition: .5s ease;
     background-color: rgba(0, 0, 0, .75);
 }
-.card-img .overlay:hover {
-    opacity: 1;
-}
-.card-img .overlay:hover p {
+.card:hover .overlay {
     opacity: 1;
 }
 .title {
