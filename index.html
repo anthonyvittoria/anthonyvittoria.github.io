@@ -42,16 +42,16 @@
                 <br><br>
                 <div id="linkRowBig" class="row text-center">
                     <div class="col">
-                        <a data-bs-toggle="modal" data-bs-target="#contactModal"><p class="likeLink">Contact Me</p></a>
+                        <a data-bs-toggle="modal" data-bs-target="#contactModal"><p class="likeLink"><i class="fas fa-envelope"></i>Contact</p></a>
                     </div>
                     <div class="col">
-                        <a target="_blank" href="https://www.linkedin.com/in/anthony-vittoria-04b501163/"><p>LinkedIn</p></a>
+                        <a target="_blank" href="https://www.linkedin.com/in/anthony-vittoria-04b501163/"><p><i class="fab fa-linkedin"></i>LinkedIn</p></a>
                     </div>
                     <div class="col">
-                        <a target="_blank" href="https://github.com/anthonyvittoria"><p>GitHub</p></a>
+                        <a target="_blank" href="https://github.com/anthonyvittoria"><p><i class="fab fa-github-square"></i>GitHub</p></a>
                     </div>
                     <div class="col">
-                        <a href="static/doc/Resume.pdf"><p>Resume</p></a>
+                        <a href="static/doc/Resume.pdf"><p><i class="fas fa-file"></i>Resume</p></a>
                     </div>
                     <div class="col"></div>
                 </div>
@@ -64,21 +64,28 @@
                                 <p class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></p>
                             </div>
                             <div class="modal-body">
-                                <form action="https://kwes.io/api/foreign/forms/4OCHC0WxT2yvHO02GqQP" class="kwes-form">
-                                    <div class="mb-3 px-4">
-                                        <label for="name" class="form-label">Name</label>
-                                        <input type="text" name="name" class="form-control" placeholder="" rules="required|max:100">
-                                    </div>
-                                    <div class="mb-3 px-4">
-                                        <label for="email" class="form-label">Email</label>
-                                        <input type="text" name="email" class="form-control" rules="required|email">
-                                    </div>
-                                    <div class="mb-3 px-4">
-                                        <label for="message">Message</label>
-                                        <textarea name="message" class="form-control" cols="30" rows="10" rules="required|max:5000"></textarea>
-                                    </div>
-                                    <button class="btn btn-primary" type="submit">Submit</button>
-                                </form>
+                                <div class="px-4">
+                                    <p>You can reach me using this contact form or by email at <a href="mailto:a.vittoria0304@gmail.com">a.vittoria0304@gmail.com</a></p>
+                                    <p>My public PGP key can be found <a href="./static/doc/pubkey.txt">here</a>.</p>
+                                    <hr>
+                                    <form action="https://kwes.io/api/foreign/forms/4OCHC0WxT2yvHO02GqQP" class="kwes-form">
+                                        <div class="mb-3">
+                                            <label for="name" class="form-label">Name</label>
+                                            <input type="text" name="name" class="form-control" placeholder="" rules="required|max:100">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label">Email</label>
+                                            <input type="text" name="email" class="form-control" rules="required|email">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="message">Message</label>
+                                            <textarea name="message" class="form-control" cols="30" rows="10" rules="required|max:5000"></textarea>
+                                        </div>
+                                        <div class="d-grid gap-2 mb-3">
+                                            <button class="btn btn-primary" type="submit">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
