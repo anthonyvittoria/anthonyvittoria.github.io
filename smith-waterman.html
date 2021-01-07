@@ -22,34 +22,8 @@
         <h1 class="title" style="font-size: 70px;">Smith-Waterman Algorithm</h1>
       </div>
         <div class="p-5">
-            <h2 class="title">The Algorithm</h2>
-            <p><a target="_blank" href="https://en.wikipedia.org/wiki/Smith%E2%80%93Waterman_algorithm">The algorithm</a> performs local sequence alignment on two substrings of nucleic acids or protein
-                sequences. Local sequence alignment is frequently performed in bioinformatics to <i>"identify regions of similarity 
-                that may be a consequence of functional, structural, or evolutionary relationships between the sequences"</i> (Wikipedia).
-            </p>
-            <p>The Smith-Waterman algorithm was proposed in 1981 as an alternative to the earlier <a target="_blank" href="https://en.wikipedia.org/wiki/Needleman%E2%80%93Wunsch_algorithm">Needleman-Wunsch algorithm</a>
-                with the intention of improving the readability of the scoring matrix. 
-            </p>
-            <p>Here's a summary of how the algorithm works:</p>
-            <ol>
-                <li>Define substitution matrix and gap penalties</li>
-                <p>"Scores" are assigned to matches and mismatches between base pairs. The exact value of each score
-                    is assigned by the researcher and typically will be determined by the particular goal of their research.
-                </p>
-                <li>Initialize the scoring matrix</li>
-                <p>A matrix of size &nbsp;<code>1 + length(sequence1)</code> <span class="font-monospace">&nbsp;x&nbsp;</span> <code>1 + length(sequence2)</code>&nbsp; is created, and
-                initialized with zeroes in the first row and column.</p>
-                <li>Score pairs and fill matrix</li>
-                <p>Each pair of base matches is assigned a final score equal to the highest scoring test against other cells in the
-                    matrix (more info on this <a target="_blank" href="https://en.wikipedia.org/wiki/Smith%E2%80%93Waterman_algorithm#Explanation">here</a>).
-                </p>
-                <li>Traceback</li>
-                <p>Starting with the highest final score, the matrix is traversed recursively along the highest-scoring cells until zero is reached.
-                    This process identifies the base pairs used in the final result.
-                </p>
-            </ol>
-            <h2 class="title mt-5 mb-3">Interactive Example &nbsp;<span style="font-size: 14px;"><a target="_blank" href="https://github.com/anthonyvittoria/smith-waterman-js">See the Code <i class="fab fa-github"></i></a></span></h2>
-            <div class="row">
+          <h2 class="title mt-5 mb-3">Interactive Example &nbsp;<span style="font-size: 14px;"><a target="_blank" href="https://github.com/anthonyvittoria/smith-waterman-js">See the Code <i class="fab fa-github"></i></a></span></h2>
+            <div class="row mb-4">
                 <div class="col">
 
                     <div class="card">
@@ -101,6 +75,32 @@
                     <table id="matrix" class="table table-borderless mx-auto text-center stage-0" style="width: 60%;font-size: 18px;"></table>
                 </div>
             </div>
+            <h2 class="title">The Algorithm</h2>
+            <p><a target="_blank" href="https://en.wikipedia.org/wiki/Smith%E2%80%93Waterman_algorithm">The algorithm</a> performs local sequence alignment on two substrings of nucleic acids or protein
+                sequences. Local sequence alignment is frequently performed in bioinformatics to <i>"identify regions of similarity 
+                that may be a consequence of functional, structural, or evolutionary relationships between the sequences"</i> (Wikipedia).
+            </p>
+            <p>The Smith-Waterman algorithm was proposed in 1981 as an alternative to the earlier <a target="_blank" href="https://en.wikipedia.org/wiki/Needleman%E2%80%93Wunsch_algorithm">Needleman-Wunsch algorithm</a>
+                with the intention of improving the readability of the scoring matrix. 
+            </p>
+            <p>Here's a summary of how the algorithm works:</p>
+            <ol>
+                <li>Define substitution matrix and gap penalties</li>
+                <p>"Scores" are assigned to matches and mismatches between base pairs. The exact value of each score
+                    is assigned by the researcher and typically will be determined by the particular goal of their research.
+                </p>
+                <li>Initialize the scoring matrix</li>
+                <p>A matrix of size &nbsp;<code>1 + length(sequence1)</code> <span class="font-monospace">&nbsp;x&nbsp;</span> <code>1 + length(sequence2)</code>&nbsp; is created, and
+                initialized with zeroes in the first row and column.</p>
+                <li>Score pairs and fill matrix</li>
+                <p>Each pair of base matches is assigned a final score equal to the highest scoring test against other cells in the
+                    matrix (more info on this <a target="_blank" href="https://en.wikipedia.org/wiki/Smith%E2%80%93Waterman_algorithm#Explanation">here</a>).
+                </p>
+                <li>Traceback</li>
+                <p>Starting with the highest final score, the matrix is traversed recursively along the highest-scoring cells until zero is reached.
+                    This process identifies the base pairs used in the final result.
+                </p>
+            </ol>
         </div>
     </div>
 
